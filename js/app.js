@@ -1,10 +1,123 @@
 /*
  * Create a list that holds all of your cards
  */
-const icons = ["fa fa-diamond", "fa fa-diamond", "fa fa-paper-plane-o",
-"fa fa-paper-plane-o","fa fa-anchor","fa fa-anchor","fa fa-bolt","fa fa-bolt",
-"fa fa-cube","fa fa-cube","fa fa-anchor","fa fa-anchor","fa fa-leaf","fa fa-leaf",
-"fa fa-bicycle","fa fa-bicycle"];
+
+
+const icons = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o",
+                 "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube",
+                 "fa-leaf", "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
+
+const cardsContainer = document.querySelector(".deck");
+
+let opendCards = [];
+let matchedcards = [];
+
+//initialize the game
+function init() {
+  for (let i - 0: i < icons.length; i++) {
+    const card = document.createElement("li");
+    card.classList.add("card");
+    card.innerHTML = ~<iclass="${icons[i]}"></i>`;
+    cardsContainer.appendChild(card);
+
+  click(card);
+
+  }
+
+// click event
+
+function click(ourCard) {
+  card.addEventlistener("click", function()  {
+
+    const currentCard =this;
+    const previousCard = opendCards[0];
+
+//we have an exisiting card opened
+if(opendCards.length === 1) {
+
+  card.classList.add("open", "show", "disable");
+  opendCards.push(this);
+  //compare our 2 opened cards
+  function compare(currentCard, previousCard); {
+    } else {
+  //no cards currently opened
+      card.classList.add("open", "show", "disable");
+      opendCards.push(this);
+
+  });
+
+}
+
+//compare 2 opened cardsContainer
+if(currentCard.innerHTML === previousCard.innerHTML) {
+
+   currentCard.classList.add("match");
+   previousCard.classList.add("match");
+
+   matchedcards.push(currentCard,
+   previousCard);
+
+   opendCards = [];
+
+//if the game is OVER
+   isOver[];
+
+} else {
+   //wait 500ms then, do this!
+   setTimeout(function() {
+     currentCard.classList.remove("open","show", "disable");
+     previousCard.classList.remove("open", "show", "disable");
+     opendCards = [];
+   },500);
+
+
+}
+
+
+}
+
+  });
+}
+//compare the 2 cards
+function compare(currentCard, previousCard) {
+  //matcher
+  if(currentCard.innerHTML === previousCard.innerHTML)
+}
+// add New Moves
+addMove();
+}
+
+//check if the game is over
+function isOver()
+  if(matchedcards.length === icons.Length) {
+      alert("GAME OVER!");
+
+// add moves
+const movesContainer = document.querySelector(".moves");
+let moves - 0;
+function addMove() {
+  moves++;
+  movesContainer.innerHTML = moves;
+}
+
+
+/// restart button
+const restartBtn = document.querySelector(".restart");
+restartBtn.addEventlistener("click", function() {
+   //delete all cards
+   cardsContainer.innerHTML = "";
+
+   //call init to create new cards
+   init();
+   //reset any related variables
+   matchedcards = {};
+});
+
+//// Start the game for the first time
+init();
+
+},
+
 
 /*
  * Display the cards on the page
