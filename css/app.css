@@ -80,8 +80,11 @@ h1 {
     background: #02ccba;
     font-size: 33px;
 }
-.deck .card.disabled {
-    pointer-events:none;
+
+.deck .card.unmatch {
+    cursor: default;
+    background: #ff0000;
+    font-size: 33px;
 }
 
 /*
@@ -101,12 +104,117 @@ h1 {
     margin: 0 5px 0 0;
 }
 
+.score-panel .stars.fa-star-o {
+
+}
+
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
 }
 
+.score-panel .timer {
+    float: right;
+    margin: 0 0 0 20px;
+}
+
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+
+
+/* Modal CSS by https://www.w3schools.com/howto/howto_css_modals.asp */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*Button as seen at https://www.w3schools.com/tags/tag_button.asp*/
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/*Media Queries*/
+
+@media screen and (min-width : 300px) and (max-width : 599px) {
+  .deck {
+        width: 70%;
+        height: 70%;
+    }
+
+    .deck .card {
+        height: 200px;
+        width: 200px;
+  }
+}
+
+  @media screen and (min-width : 600px) {
+      .deck {
+            width: 80%;
+            height: 80%;
+        }
+
+        .deck .card {
+            height: 150px;
+            width: 150px;
+        margin: 0 0 20px 0;
+      }
+    }
+
+@media screen and (min-width:1000px){
+  .deck {
+    width: 660px;
+    height: 680px;
+  }
+
+  .deck .card {
+    height: 125px;
+    width: 125px;
+  }
+}
+
+
+#finalRating {
+    list-style: none;
 }
